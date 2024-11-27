@@ -138,6 +138,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
+# Django Allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# Site ID for Django Allauth
+SITE_ID = 1
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'GB'
