@@ -12,3 +12,4 @@ db.json
 debug.log
 wsgi.py
 db.sqlite3
+core_data.json
