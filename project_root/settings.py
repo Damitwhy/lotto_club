@@ -28,7 +28,7 @@ if os.path.exists(os.path.join(BASE_DIR, 'env.py')):
 SECRET_KEY = os.getenv('SECRET_KEY', 'letstrysomethingnew')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*.herokuapp.com', 'purerarez.co.uk','www.purerarez.co.uk', 'localhost', '127.0.0.1']
 
