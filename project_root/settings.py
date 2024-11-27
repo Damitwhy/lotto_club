@@ -25,12 +25,12 @@ if os.path.exists(os.path.join(BASE_DIR, 'env.py')):
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = True #os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*.herokuapp.com', 'purerarez.co.uk','www.purerarez.co.uk', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*.herokuapp.com', 'purerarez.co.uk','www.purerarez.co.uk', 'localhost', '127.0.0.1', 'lotto-club-5977639ec0db.herokuapp.com']
 
 # specify the location of the custom user model
 AUTH_USER_MODEL = 'core.User'
