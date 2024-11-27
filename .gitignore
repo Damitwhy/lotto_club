@@ -10,6 +10,5 @@ cloudinary_python.txt
 db.json
 .env
 debug.log
-wsgi.py
 db.sqlite3
 core_data.json
