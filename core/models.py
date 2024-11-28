@@ -58,7 +58,7 @@ class Ticket(models.Model):
     draw = models.ForeignKey(LotteryDraw, on_delete=models.CASCADE)
     syndicate = models.ForeignKey(Syndicate, on_delete=models.CASCADE)
     ticket_number = models.CharField(max_length=50)
-    purchase_date = models.DateTimeField(auto_now_add=True)
+    purchase_date = models.DateTimeField()
 
     def __str__(self):
         return self.ticket_number

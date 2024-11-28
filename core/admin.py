@@ -13,15 +13,20 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'email', 'phone_number', 'address', 'postcode', 'date_of_birth')
     search_fields = ('username', 'email', 'phone_number')
 
-@admin.register(Syndicate)
-class SyndicateAdmin(admin.ModelAdmin):
-    list_display = ('name', 'manager')
-    search_fields = ('name', 'manager__username')
-
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phone_number', 'address', 'postcode', 'date_of_birth', 'syndicate')
     search_fields = ('name', 'email', 'phone_number')
+
+class MemberInline(admin.TabularInline):
+    model = Member
+    extra = 1
+
+@admin.register(Syndicate)
+class SyndicateAdmin(admin.ModelAdmin):
+    list_display = ('name', 'manager')
+    search_fields = ('name', 'manager__username')
+    inlines = [MemberInline]
 
 @admin.register(Membership)
 class MembershipAdmin(admin.ModelAdmin):
@@ -40,6 +45,5 @@ class LotteryDrawAdmin(admin.ModelAdmin):
 
 @admin.register(Ticket)
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('draw', 'syndicate', 'ticket_number', 'purchase_date')
-    search_fields = ('draw__date', 'syndicate__name', 'ticket_number')
-
+    fields = ['draw', 'syndicate', 'ticket_number', 'purchase_date']
+    list_display = ['ticket_number', 'draw', 'syndicate', 'purchase_date']
